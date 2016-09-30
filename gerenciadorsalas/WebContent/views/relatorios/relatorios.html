@@ -1,0 +1,84 @@
+<div class="wrapper" ng-controller="RelatoriosController" ng-init="relatoriosInit()">
+	<header header>
+		
+	</header>
+	<section>
+		<div class="progress mini-progress" ng-show="showLoading">
+  			<div class="progress-bar progress-bar-striped active" role="progressbar" 
+  				aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+    			<span class="sr-only">100% Complete</span>
+  			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-4 text-center">
+							<h3>Reservas</h3>
+							<div class="val">{{reservas.length}}</div>
+							<p>no intervalo de  {{reservas[(reservas.length - 1)].inicioTime | amDifference : reservas[0].inicioTime : 'days' }} dias</p>
+						</div>
+						<div class="col-md-4 text-center">
+							<h3>Horas de Uso</h3>
+							<div class="val">{{reservas | sumByKey: 'tempo'}}</div>
+							<p>tempo médio: {{(reservas | sumByKey: 'tempo') / reservas.length}}h</p>
+						</div>
+						<div class="col-md-4 text-center">
+							<h3>Participantes</h3>
+							<div class="val">{{reservas | sumByKey : 'quantidadeParticipantes'}}</div>
+							<p>média por reserva: {{(reservas | sumByKey: 'quantidadeParticipantes') / reservas.length}}</p>
+						</div>
+					</div>
+					
+					<div class="panel panel-success">
+						<div class="panel-heading">Colunas</div>
+						<div class="panel-body">
+							
+						</div>
+					</div>
+					
+					<div class="panel panel-primary">
+						<div class="panel-heading">Relatorios</div>
+						<div class="panel-body">
+							
+								<table datatable="ng" dt-options="dtOptions" class="table table-hover table-condensed relatorios-table">
+									<thead>
+										<tr>
+											<th>Reserva</th>
+											<th>Sala</th>
+											<th>Data</th>
+											<th>Inicio</th>
+											<th>Fim</th>
+											<th>Local</th>
+											<th>Solicitante</th>
+											<th>Aprovador</th>
+											<th>Tipo</th>
+											<th>Status</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="reserva in reservas">
+											<td>{{reserva.titulo}}</td>
+											<td>{{reserva.sala.nome}}</td>
+											<td>{{reserva.dataSolicitacaoTime | date: 'dd/MM/yyyy'}}</td>
+											<td>{{reserva.inicioTime | date: 'dd/MM/yyyy'}}</td>
+											<td>{{reserva.fimTime | date: 'dd/MM/yyyy'}}</td>
+											<td>{{reserva.sala.endereco.complemento}}</td>
+											<td>{{reserva.usuarioSolicitante.nome}}</td>
+											<td><span ng-repeat="responsavel in reserva.sala.responsaveis">{{responsavel.orgInstUser.usuario.nome}}</span>&nbsp;</td>
+											<td>{{reserva.tempo}}</td>
+											<td>{{reserva.status}}</td>
+										</tr>
+									</tbody>
+								</table>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		
+	</footer>
+</div>

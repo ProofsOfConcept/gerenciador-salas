@@ -1,0 +1,84 @@
+<div class="gs-navbar">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#pe-navbar"
+                        aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand md-brand">
+                    AMX.MRooms
+                </span>
+            </div>
+            <div class="collapse navbar-collapse" id="pe-navbar">
+                <ul class="nav navbar-nav navbar-top-links navbar-right">
+                    
+                    <li>
+                        <a class="dropdown-toggle clickable" data-toggle="dropdown">
+                            <span class="fa fa-calendar"></span>
+                            <span>Agenda</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="clickable" ng-click="changeView('month')">
+		                            <span class="fa fa-th"></span>
+		                            <span>Mensal</span>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a class="clickable" ng-click="changeView('listMonth')">
+		                            <span class="fa fa-list"></span>
+		                            <span>Lista Mensal</span>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a class="clickable" ng-click="changeView('agendaWeek')">
+		                            <span class="fa fa-th-list"></span>
+		                            <span>Semanal</span>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a class="clickable" ng-click="changeView('agendaDay')">
+		                            <span class="fa fa-square"></span>
+		                            <span>Diaria</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a ui-sref="relatorios" class="clickable"><i class="fa fa-bar-chart"></i>&nbsp;<span>Relatórios</span></a>
+                    </li>
+                    <li>
+                        <a ui-sref="salas" class="clickable"><i class="fa fa-search"></i>&nbsp;<span>Salas</span></a>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle clickable" data-toggle="dropdown">
+                            <span class="fa fa-user"></span>
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                <a ui-sref="home"><i class="fa fa-user fa-fw"></i>&nbsp;Meu Perfil</a>
+                            </li>
+                            <li>
+                                <a ui-sref="home"><i class="fa fa-gear fa-fw"></i>&nbsp;Configurações</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a ui-sref="home"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Sair</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	</nav>
+</div>

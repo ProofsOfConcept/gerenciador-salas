@@ -1,0 +1,167 @@
+html {
+	height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.mainsec {
+	height: 100%;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#wrapper.login-wrapper .content {
+    height: 66.833%;
+    background-color: #DFECF0;
+    overflow: auto;
+}
+
+#wrapper.login-wrapper .header .logo img {
+    max-width: 100%;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#wrapper.login-wrapper .header .logo {
+    max-width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#wrapper.login-wrapper .header {
+    height: 33.167%;
+}
+
+#wrapper.login-wrapper .content .content-wrapper {
+    width: 80%;
+    max-width: 800px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 55px;
+}
+
+#wrapper.login-wrapper .content .login-compact {
+    max-width: 480px;
+}
+
+.control-group {
+    padding-bottom: 10px;
+}
+
+form.login .controls {
+    margin-left: 132px;
+}
+
+form.login .buttons {
+    margin-left: 132px;
+}
+
+.control-group label {
+    display: block;
+    width: 212px;
+    padding: 6px 0 2px 0;
+    float: left;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+}
+
+form.login label {
+    width: 132px;
+}
+
+@media (max-width: 568px)
+form.login .buttons {
+    margin-left: 0;
+}
+
+@media (max-device-width: 640px) and (min-device-width: 320px)
+#wrapper.login-wrapper .content .fields .control-group.buttons {
+    margin-top: 10px;
+}
+
+@media (max-device-width: 640px) and (min-device-width: 320px)
+#wrapper.login-wrapper .content .fields .controls {
+    margin-left: 0;
+}
+
+@media (max-device-width: 640px) and (min-device-width: 320px)
+#wrapper.login-wrapper .content .fields label {
+    width: 100%;
+}
+
+.space-top {
+	margin-top: 20px;
+}
+
+.btn-login {
+	margin-top: 20px;
+}
+
+.gs-navbar {
+	height: 52px;
+}
+
+.mini-progress {
+	height: 6px;
+	margin-bottom: 0;
+}
+
+.container-calendar {
+    height: auto;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.gs-inline-block {
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+}
+
+.calListSquare {
+	background: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 1px;
+    height: 11px;
+    margin-right: 4px;
+    position: relative;
+    top: 2px;
+    width: 11px;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+}
+
+.text-muted-important {
+    color: #bbb !important;
+}
+
+.row .col-md-4 .val {
+    color: #E86554;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 100;
+}
+
+.relatorios-table {
+	width: 100%;
+}

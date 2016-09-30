@@ -1,0 +1,121 @@
+<div class="wrapper" ng-controller="MensalController" ng-init="mensalInit()">
+	<header header>
+		
+	</header>
+	<section>
+		<div class="progress mini-progress" ng-show="showLoading">
+  			<div class="progress-bar progress-bar-striped active" role="progressbar" 
+  				aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+    			<span class="sr-only">100% Complete</span>
+  			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="row text-center">
+						<button type="button" ng-click="novaReserva();" class="btn btn-danger space-top">
+							<i class="fa fa-calendar-plus-o"></i>&nbsp;Agendar
+						</button>
+					</div>
+					<div class="row space-top">
+						<div class="panel">
+							<div class="panel-heading">
+								<span class="clickable">
+									<i class="glyphicon glyphicon-chevron-up"></i>
+								</span>&nbsp;<span>Minhas Salas Reservadas</span>
+								<div class="pull-right">
+									<div class="btn-group">
+										<button type="button" class="btn btn-default btn-xs dropdown-toggle" 
+											data-toggle="dropdown" aria-expanded="false">
+											&nbsp;<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu pull-right" role="menu">
+	                                        <li><a href="#">Action</a>
+	                                        </li>
+	                                        <li><a href="#">Another action</a>
+	                                        </li>
+	                                        <li><a href="#">Something else here</a>
+	                                        </li>
+	                                        <li class="divider"></li>
+	                                        <li><a href="#">Separated link</a>
+	                                        </li>
+	                                    </ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div class="list-group">
+									<a class="list-group-item clickable" ng-repeat="minhaSala in minhasSalas" ng-click="setVisible(minhaSala, $index);">
+										<h5 class="list-group-item-heading" ng-class="minhaSala.visivel !== true ? 'text-muted-important' : ''">
+											<div class="calListSquare gs-inline-block" ng-style="minhaSala.visivel === true ? {'background': minhaSala.cor, 'border-color': minhaSala.cor} : ''"></div>
+											&nbsp;<span>{{minhaSala.nome}}</span>
+										</h5>
+										<span class="list-group-item-body text-muted">
+											{{minhaSala.organizacao.sigla}} - {{minhaSala.instituicao.sigla}} - {{minhaSala.endereco.complemento}}
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="panel">
+							<div class="panel-heading">
+								<span class="clickable">
+									<i class="glyphicon glyphicon-chevron-up"></i>
+								</span>&nbsp;<span>Salas como Participante</span>
+								<div class="pull-right">
+									<div class="btn-group">
+										<button type="button" class="btn btn-default btn-xs dropdown-toggle" 
+											data-toggle="dropdown" aria-expanded="false">
+											&nbsp;<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu pull-right" role="menu">
+	                                        <li><a href="#">Action</a>
+	                                        </li>
+	                                        <li><a href="#">Another action</a>
+	                                        </li>
+	                                        <li><a href="#">Something else here</a>
+	                                        </li>
+	                                        <li class="divider"></li>
+	                                        <li><a href="#">Separated link</a>
+	                                        </li>
+	                                    </ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel-body">
+								<div class="list-group">
+									<div class="list-group-item">
+										<div class="form-group">
+											<input type="text" ng-model="searchtext.nome" class="form-control" placeholder="Buscar Sala">
+										</div>
+									</div>
+									<a class="list-group-item clickable" ng-repeat="sala in salas | filter:searchtext" ng-click="setVisible(sala, $index);">
+										<h5 class="list-group-item-heading" ng-class="sala.visivel !== true ? 'text-muted-important' : ''">
+											<div class="calListSquare gs-inline-block" ng-style="sala.visivel === true ? {'background': sala.cor, 'border-color': sala.cor} : ''"></div>
+											&nbsp;<span>{{sala.nome}}</span>
+										</h5>
+										<span class="list-group-item-body text-muted">
+											{{sala.organizacao.sigla}} - {{sala.instituicao.sigla}} - {{sala.endereco.complemento}}
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="container-calendar">
+				    	<div ui-calendar="uiConfig.calendar" calendar="myCalendar1" 
+				    		class="calendar" id="my-calendar" ng-model="eventSources">
+				    	</div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		
+	</footer>
+</div>
